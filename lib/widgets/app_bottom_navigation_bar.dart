@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppBottomNavigationBar extends StatefulWidget {
-  const AppBottomNavigationBar({Key? key}) : super(key: key);
-
+  final Function(int) onPressed;
+  const AppBottomNavigationBar({Key? key, required this.onPressed}) : super(key: key);
   @override
   State<AppBottomNavigationBar> createState() => _AppBottomNavigationBarState();
 }
@@ -34,31 +34,32 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
           setState(() {
             _selectedIndex = newIndex;
           });
+          widget.onPressed(newIndex);
         },
         destinations: [
           NavigationDestination(
-            icon: const Icon(CupertinoIcons.arrow_right_arrow_left),
+            icon: const Icon(CupertinoIcons.home),
             selectedIcon: Icon(
-              CupertinoIcons.arrow_right_arrow_left,
+              CupertinoIcons.home,
               color: Colors.grey[800],
             ),
-            label: "Exchange",
+            label: "Home",
           ),
           NavigationDestination(
-            icon: const Icon(CupertinoIcons.square_stack),
+            icon: const Icon(CupertinoIcons.compass),
             selectedIcon: Icon(
-              CupertinoIcons.square_stack,
+              CupertinoIcons.compass,
               color: Colors.grey[800],
             ),
-            label: "NFT",
+            label: "Explore",
           ),
           NavigationDestination(
-            icon: const Icon(CupertinoIcons.money_dollar),
+            icon: const Icon(CupertinoIcons.person),
             selectedIcon: Icon(
-              CupertinoIcons.money_dollar,
+              CupertinoIcons.person,
               color: Colors.grey[800],
             ),
-            label: "Earn",
+            label: "Profile",
           ),
           NavigationDestination(
             icon: const Icon(CupertinoIcons.ellipsis),
