@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_nft_marketplace/app_state.dart';
-import 'package:mobile_nft_marketplace/screens/explore_screen.dart';
-import 'package:mobile_nft_marketplace/screens/home_screen.dart';
-import 'package:mobile_nft_marketplace/screens/more_screen.dart';
-import 'package:mobile_nft_marketplace/screens/nft_detail_screen.dart';
-import 'package:mobile_nft_marketplace/screens/profile_screen.dart';
-import 'package:mobile_nft_marketplace/widgets/app_bottom_navigation_bar.dart';
+import 'package:mobile_nft_marketplace/screens/home/home_screen.dart';
+import 'package:mobile_nft_marketplace/utils/colors.dart';
+import 'package:mobile_nft_marketplace/widgets/bottom_bar.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -28,47 +25,17 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         title: 'Mobile NFT Marketplace',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primaryColor: purple[900],
+          backgroundColor: black,
         ),
         home: SafeArea(
-          child: Scaffold(
-            backgroundColor: Colors.white,
-            body: Consumer<AppState>(
-              builder: (context, state, child) {
-                return Navigator(
-                  onPopPage: ((route, result) => route.didPop(result)),
-                  pages: [
-                    if (state.selectedScreen == 0)
-                      const MaterialPage(
-                        child: HomeScreen(),
-                      )
-                    else if (state.selectedScreen == 1)
-                      const MaterialPage(
-                        child: ExploreScreen(),
-                      )
-                    else if (state.selectedScreen == 2)
-                      const MaterialPage(
-                        child: ProfileScreen(),
-                      )
-                    else if (state.selectedScreen == 3)
-                      const MaterialPage(
-                        child: MoreScreen(),
-                      )
-                    else if (state.selectedScreen == 4)
-                      const MaterialPage(
-                        child: NFTDetailScreen(),
-                      )
-                  ],
-                );
-              },
-            ),
-            bottomNavigationBar: Consumer<AppState>(
-              builder: (context, state, child) {
-                return AppBottomNavigationBar(
-                  onPressed: state.changeScreen,
-                );
-              },
-            ),
+          child: Consumer<AppState>(
+            builder: (context, state, child) {
+              return const Scaffold(
+                body: HomeScreen(),
+                bottomNavigationBar: BottomBar(),
+              );
+            },
           ),
         ),
       ),
