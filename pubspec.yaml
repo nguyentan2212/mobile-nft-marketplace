@@ -70,24 +70,27 @@ flutter:
     - assets/images/authors/1.jpg
     - assets/images/authors/2.jpg
     
-    - assets/images/items/0.jpg
-    - assets/images/items/1.jpg
-    - assets/images/items/2.jpg
-    - assets/images/items/3.jpg
-    - assets/images/items/4.jpg
-    - assets/images/items/5.jpg
-    - assets/images/items/6.jpg
-    - assets/images/items/7.jpg
-    - assets/images/items/8.jpg
-    - assets/images/items/9.jpg
-    - assets/images/items/10.jpg
-    - assets/images/items/11.jpg
-    - assets/images/items/12.jpg
-    - assets/images/items/13.jpg
-    - assets/images/items/14.jpg
-    - assets/images/items/15.jpg
+    - assets/images/Image1203.png
+    - assets/images/Image1277.png
+    - assets/images/Image1334.png
+    - assets/images/Image1760.png
+    - assets/images/splash.png
+    - assets/images/item1.jpg
 
-    - assets/images/ethereum.svg
+    - assets/icons/ethereum.svg
+    - assets/icons/user.svg
+    - assets/icons/user_filled.svg
+    - assets/icons/search.svg
+    - assets/icons/search_filled.svg
+    - assets/icons/plus.svg
+    - assets/icons/home.svg
+    - assets/icons/home_filled.svg
+    - assets/icons/chart_square_bar.svg
+    - assets/icons/chart_square_bar_filled.svg
+    - assets/icons/play.svg
+    - assets/icons/share.svg
+    - assets/icons/heart.svg
+    - assets/icons/heart_filled.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
