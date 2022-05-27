@@ -7,6 +7,7 @@ class AppState extends ChangeNotifier {
   NFTItem? selectedItem;
   Collection? selectedCollection;
   int selectedScreen = 0;
+  int bottomBarSelectedIndex = 0;
 
   void selectItem(NFTItem item) {
     selectedItem = item;
@@ -21,6 +22,12 @@ class AppState extends ChangeNotifier {
 
   void changeScreen(int newIndex) {
     selectedScreen = newIndex;
+    notifyListeners();
+  }
+
+  void bottomBarChangeIndex(int newIndex) {
+    bottomBarSelectedIndex = newIndex;
+    debugPrint("bottom index change");
     notifyListeners();
   }
 }
