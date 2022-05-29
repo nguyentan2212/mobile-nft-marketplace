@@ -17,13 +17,15 @@ class BottomBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 56,
-      height: 56,
+      height: 62,
       child: Consumer<AppState>(
         builder: (context, state, child) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               IconButton(
+                splashRadius: 1,
+                padding: const EdgeInsets.all(4.0),
                 splashColor: purple[100],
                 icon: state.bottomBarSelectedIndex == index ? selectedIcon : icon,
                 onPressed: () => state.bottomBarChangeIndex(index),
