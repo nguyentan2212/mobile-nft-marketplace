@@ -23,33 +23,45 @@ class LiveBiddingList extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              Text(
-                "See more",
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: greyscale[700],
+              InkWell(
+                child: Text(
+                  "See more",
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: greyscale[700],
+                  ),
                 ),
+                onTap: () => Navigator.pushNamed(context, '/liveBidding'),
               )
             ],
           ),
         ),
         SizedBox(
-          height: 245,
+          height: 261,
           child: ListView(
             physics: const ClampingScrollPhysics(),
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
             children: const [
-              NftCard(),
+              NftCard(
+                width: 225,
+                height: 261,
+              ),
               SizedBox(
                 width: 16.0,
               ),
-              NftCard(),
+              NftCard(
+                width: 225,
+                height: 261,
+              ),
               SizedBox(
                 width: 16.0,
               ),
-              NftCard(),
+              NftCard(
+                width: 225,
+                height: 261,
+              ),
               SizedBox(
                 width: 16.0,
               ),
