@@ -39,7 +39,7 @@ class BottomBar extends StatelessWidget {
             index: 1,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(6.0),
             child: SizedBox(
               height: 46,
               child: FloatingActionButton(
